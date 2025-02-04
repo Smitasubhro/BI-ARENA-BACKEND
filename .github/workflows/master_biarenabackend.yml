@@ -55,4 +55,4 @@ jobs:
           app-name: 'BIARENABACKEND'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F910C6DA7B10434AA1F7D6FF1CBE57D9 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7D35D008839747A98E99144FE3EA78F3 }}
