@@ -55,4 +55,4 @@ jobs:
           app-name: 'EY-BI-ARENA-BACKEND'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BAF8BE77423E4840857E32C4384B733B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72558C50038542FE8FB5053280387F40 }}
