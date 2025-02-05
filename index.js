@@ -527,7 +527,10 @@ app.put('/saveInsights', async (req, res) => {
 });
 
   // Start the server
-app.listen(5050, () => {
-    console.log("Server has started at port 5050");
-  });
+// app.listen(5050, () => {
+//     console.log("Server has started at port 5050");
+//   });
+let port = process.env.PORT || 8080;
+app.listen(port);
+console.log('BI ARENA API is runnning at ' + port);
   
