@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '~22'
 
       - name: npm install, build, and test
         run: |
@@ -55,4 +55,4 @@ jobs:
           app-name: 'EY-BI-ARENA-BACKEND'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_72558C50038542FE8FB5053280387F40 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CFB4B6DD972E4EE88501A40376DC0C17 }}
