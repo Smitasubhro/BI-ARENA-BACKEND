@@ -180,7 +180,7 @@ const upload = multer({
           .input("report_id", sql.VarChar(80), report_id)
           .input("report_name", sql.VarChar(50), report_name)
           .input("url", sql.VarChar(255), url)
-          .input("brief_description", sql.VarChar(255), brief_description)
+          .input("brief_description", sql.VarChar(2000), brief_description)
           .query(`MERGE INTO PBI_Info AS target
             USING (VALUES (@report_id,@workspace_id,
             @report_name,@url,@brief_description)) AS source 
@@ -207,7 +207,7 @@ const upload = multer({
             .input("report_id", sql.VarChar(80), report_id)
             .input("type", sql.VarChar(50), datasource.type)
             .input("tableName", sql.VarChar(50), datasource.tableName)
-            .input("description", sql.VarChar(255), datasource.description)
+            .input("description", sql.VarChar(2000), datasource.description)
             .query(`MERGE INTO Datasource_Info AS target
             USING (VALUES (@report_id,@tableName,
             @type,@description)) AS source 
@@ -233,7 +233,7 @@ const upload = multer({
             .request()
             .input("report_id", sql.VarChar(80), report_id)
             .input("kpi", sql.VarChar(100), kpi.kpi)
-            .input("description", sql.VarChar(255), kpi.description)
+            .input("description", sql.VarChar(2000), kpi.description)
             .query(`MERGE INTO KPI_Info AS target
             USING (VALUES (@report_id,@kpi,
             @description)) AS source 
@@ -257,7 +257,7 @@ const upload = multer({
         await transaction.rollback();
         console.error("Transaction Error:", err);
         res
-          .status(500)
+          .status(400)
           .send({ message: "Error uploading data", error: err.message });
       }
     } catch (err) {
